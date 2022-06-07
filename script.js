@@ -68,19 +68,24 @@ function playRound(playerSelection, computerValue) {
     }
 
     //function of game
-    function game(){
-        let results =[];
-    //loop through game 5 times
+function game(){
+    let results =[];
+    let score = ['Player',0,'CPU',0]
     for (let i = 0; i < 5; i++){
-    //call getPlayerSelection()
-    const playerSelection = getPlayerSelection()
-    //call computerPlay()
-    const computerValue = computerPlay()
-    //call playRound()
-    results[i] = playRound(playerSelection, computerValue)
-    //record result each loop
+        const playerSelection = getPlayerSelection()
+        const computerValue = computerPlay()
+        results[i] = playRound(playerSelection, computerValue)
+        console.log(results[i])
+
+        if (results[i] ==='PLAYER WIN!'){
+            score[1] = score[1] + 1
+        } else if (results[i] === 'COMPUTER WIN!'){
+            score[3] = score[3] + 1
+        } 
+       console.log(score) 
     } return results
     }
+
     console.log(game())
 
     //Called Functions
